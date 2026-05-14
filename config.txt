@@ -1,0 +1,38 @@
+ServerName My Docker Bannerlord Server
+AdminPassword MySuperSecretPassword
+GameType TeamDeathmatch
+
+# Map Rotation
+add_map_to_automated_battle_pool mp_tdm_map_004a
+add_map_to_automated_battle_pool mp_tdm_map_003
+add_map_to_automated_battle_pool mp_tdm_map_001_spring
+
+# Factions (Choose from: empire, vlandia, battania, sturgia, khuzait, aserai)
+CultureTeam1 vlandia
+CultureTeam2 battania
+
+# Player and Match Settings
+MaxNumberOfPlayers 120
+MinNumberOfPlayersForMatchStart 2
+WarmupTimeLimit 3
+MapTimeLimit 20
+RoundTimeLimit 15
+RespawnPeriodTeam1 3
+RespawnPeriodTeam2 3
+AutoTeamBalanceThreshold 2
+AllowPollsToKickPlayers True
+
+# Friendly Fire Percentages (0 = Off)
+FriendlyFireDamageMeleeFriendPercent 0
+FriendlyFireDamageMeleeSelfPercent 50
+FriendlyFireDamageRangedFriendPercent 0
+FriendlyFireDamageRangedSelfPercent 50
+
+# Bots
+NumberOfBotsTeam1 0
+NumberOfBotsTeam2 0
+
+# Automation commands (Required to keep the server looping)
+set_automated_battle_count 100
+start_game
+enable_automated_battle_switching

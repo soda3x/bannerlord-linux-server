@@ -1,0 +1,13 @@
+services:
+  bannerlord-server:
+    image: soda3x/bannerlord-server
+    container_name: bannerlord-server
+    restart: unless-stopped
+    ports:
+      - "7210:7210/udp" # Main Game Port
+      - "7210:7210/tcp" # TCP fallback/Query Port
+    volumes:
+      # Mount the game installation and config files to your host machine
+      - config.txt:/home/bannerlord/config.txt
+    environment:
+      - SERVER_AUTH_TOKEN=foo
