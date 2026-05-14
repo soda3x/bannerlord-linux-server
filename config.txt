@@ -1,38 +1,59 @@
-ServerName My Docker Bannerlord Server
-AdminPassword MySuperSecretPassword
+# Basic Settings
+ServerName My Bannerlord Server
 GameType TeamDeathmatch
+AdminPassword OnlyForAdmins
 
-# Map Rotation
-add_map_to_automated_battle_pool mp_tdm_map_004a
-add_map_to_automated_battle_pool mp_tdm_map_003
-add_map_to_automated_battle_pool mp_tdm_map_001_spring
+Map mp_tdm_map_001
 
-# Factions (Choose from: empire, vlandia, battania, sturgia, khuzait, aserai)
+# Culture Settings
 CultureTeam1 vlandia
-CultureTeam2 battania
+CultureTeam2 vlandia
 
-# Player and Match Settings
-MaxNumberOfPlayers 120
-MinNumberOfPlayersForMatchStart 2
-WarmupTimeLimit 3
-MapTimeLimit 20
-RoundTimeLimit 15
-RespawnPeriodTeam1 3
-RespawnPeriodTeam2 3
-AutoTeamBalanceThreshold 2
-AllowPollsToKickPlayers True
+AllowPollsToKickPlayers true
+AllowPollsToBanPlayers true
+AllowPollsToChangeMaps true
 
-# Friendly Fire Percentages (0 = Off)
-FriendlyFireDamageMeleeFriendPercent 0
-FriendlyFireDamageMeleeSelfPercent 50
-FriendlyFireDamageRangedFriendPercent 0
-FriendlyFireDamageRangedSelfPercent 50
+# Respawn Settings
+RespawnPeriodTeam1 5
+RespawnPeriodTeam2 5
 
-# Bots
-NumberOfBotsTeam1 0
-NumberOfBotsTeam2 0
+# Round Preparation
+RoundPreparationTimeLimit 25
 
-# Automation commands (Required to keep the server looping)
-set_automated_battle_count 100
-start_game
+# Player Settings
+MaxNumberOfPlayers 32
+AutoTeamBalanceThreshold 0
+NumberOfBotsTeam1 10
+NumberOfBotsTeam2 10
+
+# Friendly Fire
+FriendlyFireDamageMeleeFriendPercent 50
+FriendlyFireDamageMeleeSelfPercent 0
+FriendlyFireDamageRangedFriendPercent 50
+FriendlyFireDamageRangedSelfPercent 0
+
+# Match Settings
+MinNumberOfPlayersForMatchStart 0
+SpectatorCamera 6
+RoundTotal 5
+MapTimeLimit 8
+RoundTimeLimit 420
+WarmupTimeLimit 60
+
+# Map Settings
+add_map_to_usable_maps mp_tdm_map_001 TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_001_spring TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_003 TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_004 TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_004a TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_004_winter TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_005 TeamDeathmatch
+add_map_to_usable_maps mp_tdm_map_005_winter TeamDeathmatch
+
+add_map_to_usable_maps mp_battle_map_001 Battle
+add_map_to_usable_maps mp_battle_map_002 Battle
+add_map_to_usable_maps mp_battle_map_003 Battle
+
+set_automated_battle_count -1
 enable_automated_battle_switching
+start_game
