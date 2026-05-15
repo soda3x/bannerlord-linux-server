@@ -12,4 +12,4 @@ services:
       # Mount the game installation and config files to your host machine
       - ./config.txt:/home/bannerlord/config.txt
     environment:
-      - ***REMOVED***
+      - SERVER_AUTH_TOKEN=foo # <-- Replace with token retrieved from Game (see README)
